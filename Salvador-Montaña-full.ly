@@ -190,7 +190,8 @@ scoreATromboneIIPart = \new Staff \with {
 } { \clef bass \scoreATromboneII }
 
 \score {
-  \transpose d c
+  % Uncomment to be in original recording key of Cm
+  %\transpose d c
   <<
     \scoreATrumpetCIPart
     \scoreATrumpetCIIPart
