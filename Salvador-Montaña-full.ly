@@ -51,7 +51,7 @@ scoreATrumpetCI = \relative c'' {
   a1\mp\<~ | a4  a16\f a8 a16~ a16 a8 r16 r4|
   a1\mp\<~ | a4  a16\f a8 a16 r2|
   a1\mp\<~ | a4  a16\f a8 a16~ a16 a8 r16 r4|
-  a1\mp\< |  d4\f-^ a-^ d-^ a-^ | d-^ a-^ d-^ a-^ | d1\fermata
+  a1\mp\< |  d4\f-^ a-^ d-^ a-^ | d-^ a-^ d-^ a-^ | d1\fermata \bar "|."
 
 }
 
@@ -87,7 +87,7 @@ scoreATrumpetCII = \relative c'' {
   e8. d16~ d8 cs8~ cs2 | r4 f16 f8 f16~ f16 f8 r16 r4 |
   cs8. d16~ d8 e8~ e2 | r4 f16 f8 f16 r2 |
   e8. d16~ d8 cs8~ cs2 | r4 f16 f8 f16~ f16 f8 r16 r4 |
-  cs8. d16~ d8 e8~ e2 | d4-^ a-^ d-^ a-^ | d-^ a-^ d-^ a-^ | d1\fermata
+  cs8. d16~ d8 e8~ e2 | d4-^ a-^ d-^ a-^ | d-^ a-^ d-^ a-^ | d1\fermata \bar "|."
 
 }
 
@@ -125,8 +125,7 @@ scoreATromboneI = \relative c {
   e8. d16~ d8 cs8~ cs2 | r4 d16 d8 d16~ d16 d8 r16 r4 |
   cs8. d16~ d8 e8~ e2 | r4 d16 d8 d16 r2 |
   e8. d16~ d8 cs8~ cs2 | r4 d16 d8 d16~ d16 d8 r16 r4 |
-  cs8. d16~ d8 e8~ e2 | d4-^ a-^ d-^ a-^ | d-^ a-^ d-^ a-^ | d1\fermata
-  %  }
+  cs8. d16~ d8 e8~ e2 | d4-^ a-^ d-^ a-^ | d-^ a-^ d-^ a-^ | d1\fermata \bar "|."
 }
 
 scoreATromboneII = \relative c {
@@ -164,8 +163,7 @@ scoreATromboneII = \relative c {
   a8. a16~ a8 a8~ a2 | r4 d16 d8 d16~ d16 d8 r16 r4 |
   a8. a16~ a8 a8~ a2 | r4 d16 d8 d16 r2 |
   a8. a16~ a8 a8~ a2 | r4 d16 d8 d16~ d16 d8 r16 r4 |
-  a8. a16~ a8 a8~ a2 | d4-^ a-^ d-^ a-^ | d-^ a-^ d-^ a-^ | d1\fermata
-  %  }
+  a8. a16~ a8 a8~ a2 | d4-^ a-^ d-^ a-^ | d-^ a-^ d-^ a-^ | d1\fermata \bar "|."
 
 }
 
@@ -179,6 +177,16 @@ scoreATrumpetCIIPart = \new Staff \with {
   midiInstrument = "trumpet"
 } \scoreATrumpetCII
 
+scoreATrumpetBbIPart = \new Staff \with {
+  instrumentName = "Tpt in Bb I"
+  midiInstrument = "trumpet"
+} \transpose bf c' \scoreATrumpetCI
+
+scoreATrumpetBbIIPart = \new Staff \with {
+  instrumentName = "Tpt in Bb II"
+  midiInstrument = "trumpet"
+} \transpose bf c' \scoreATrumpetCII
+
 scoreATromboneIPart = \new Staff \with {
   instrumentName = "Tbn I"
   midiInstrument = "trombone"
@@ -189,17 +197,370 @@ scoreATromboneIIPart = \new Staff \with {
   midiInstrument = "trombone"
 } { \clef bass \scoreATromboneII }
 
-\score {
-  % Uncomment to be in original recording key of Cm
-  %\transpose d c
-  <<
-    \scoreATrumpetCIPart
-    \scoreATrumpetCIIPart
-    \scoreATromboneIPart
-    \scoreATromboneIIPart
-  >>
-  \layout { }
-  \midi {
-    \tempo 4=128
+scoreATrumpetCIIIPart = \new Staff \with {
+  instrumentName = "Tpt in C III"
+  midiInstrument = "trumpet"
+} \scoreATromboneI
+
+scoreATrumpetCIVPart = \new Staff \with {
+  instrumentName = "Tpt in C IV"
+  midiInstrument = "trumpet"
+} \scoreATromboneII
+
+scoreATrumpetBbIIIPart = \new Staff \with {
+  instrumentName = "Tpt in Bb III"
+  midiInstrument = "trumpet"
+} \transpose bf c' \scoreATromboneI
+
+scoreATrumpetBbIVPart = \new Staff \with {
+  instrumentName = "Tpt in Bb IV"
+  midiInstrument = "trumpet"
+} \transpose bf c' \scoreATromboneII
+\book {
+  \bookOutputSuffix "Dm_C"
+  \score {
+
+    <<
+      \scoreATrumpetCIPart
+      \scoreATrumpetCIIPart
+      \scoreATromboneIPart
+      \scoreATromboneIIPart
+    >>
+    \layout { }
+    \midi {
+      \tempo 4=128
+    }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_Bb"
+  \score {
+
+    <<
+      \scoreATrumpetBbIPart
+      \scoreATrumpetBbIIPart
+      \scoreATromboneIPart
+      \scoreATromboneIIPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trumpets_in_C"
+  \score {
+
+    <<
+      \scoreATrumpetCIPart
+      \scoreATrumpetCIIPart
+    >>
+    \layout { }
+    \midi {
+      \tempo 4=128
+    }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trumpet1_in_C"
+  \score {
+
+    <<
+      \scoreATrumpetCIPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trumpet2_in_C"
+  \score {
+
+    <<
+      \scoreATrumpetCIIPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trumpet3_in_C"
+  \score {
+
+    <<
+      \scoreATrumpetCIIIPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trumpet4_in_C"
+  \score {
+
+    <<
+      \scoreATrumpetCIVPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trumpets_in_Bf"
+  \score {
+
+    <<
+      \scoreATrumpetBbIPart
+      \scoreATrumpetBbIIPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trumpet1_in_Bf"
+  \score {
+
+    <<
+      \scoreATrumpetBbIPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trumpet2_in_Bf"
+  \score {
+
+    <<
+      \scoreATrumpetBbIIPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trumpet3_in_Bf"
+  \score {
+
+    <<
+      \scoreATrumpetBbIIIPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trumpet4_in_Bf"
+  \score {
+
+    <<
+      \scoreATrumpetBbIVPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trombones"
+  \score {
+    <<
+      \scoreATromboneIPart
+      \scoreATromboneIIPart
+    >>
+    \layout { }
+    \midi {
+      \tempo 4=128
+    }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trombone1"
+  \score {
+    <<
+      \scoreATromboneIPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Dm_trombone2"
+  \score {
+    <<
+      \scoreATromboneIIPart
+    >>
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_C"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetCIPart
+        \scoreATrumpetCIIPart
+        \scoreATromboneIPart
+        \scoreATromboneIIPart
+      >>
+    }
+    \layout { }
+    \midi {
+      \tempo 4=128
+    }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_Bb"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetBbIPart
+        \scoreATrumpetBbIIPart
+        \scoreATromboneIPart
+        \scoreATromboneIIPart
+      >>
+    }
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trumpets_in_C"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetCIPart
+        \scoreATrumpetCIIPart
+      >>
+    }
+    \layout { }
+    \midi {
+      \tempo 4=128
+    }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trumpet1_in_C"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetCIPart
+      >>
+    }
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trumpet2_in_C"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetCIIPart
+      >>
+    }
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trumpet3_in_C"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetCIIIPart
+      >>
+    }
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trumpet4_in_C"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetCIVPart
+      >>
+    }
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trumpets_in_Bb"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetBbIPart
+        \scoreATrumpetBbIIPart
+      >>
+    }
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trumpet1_in_Bb"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetBbIPart
+      >>
+    }
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trumpet2_in_Bb"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetBbIIPart
+      >>
+    }
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trumpet3_in_Bb"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetBbIIIPart
+      >>
+    }
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trumpet4_in_Bb"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATrumpetBbIVPart
+      >>
+    }
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trombones"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATromboneIPart
+        \scoreATromboneIIPart
+      >>
+    }
+    \layout { }
+    \midi {
+      \tempo 4=128
+    }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trombone1"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATromboneIPart
+      >>
+    }
+    \layout { }
+  }
+}
+\book {
+  \bookOutputSuffix "Cm_trombone2"
+  \score {
+    \transpose d c {
+      <<
+        \scoreATromboneIIPart
+      >>
+    }
+    \layout { }
   }
 }
