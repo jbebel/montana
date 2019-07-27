@@ -42,7 +42,7 @@ scoreATrumpetCI = \relative c'' {
   a1\mp\< | d1\pp\<~ | d~ | d\f\bendAfter #-12 | R1
   d4-^ r r bf,\mf | a1~ | a~ | a | r2 r4 bf\mf | a1~ | a | d4-^\f e-^ f-^ fs-^
   R1\fermataMarkup R1\fermataMarkup R1\fermataMarkup R1\fermataMarkup
-  bf,2\mf\fermata c\fermata | a1~\fermata | a\fermata |
+  bf,2\(\mf\fermata    c\fermata | a1\)\fermata \breathe | a\fermata |
   d'4-^\f r r2 |
   a1\mp\<~ | a4  a16\f a8 a16~ a16 a8 r16 r4|
   a1\mp\<~ | a4  a16\f a8 a16 r2|
@@ -78,8 +78,8 @@ scoreATrumpetCII = \relative c'' {
   cs8. d16~ d8 e8~ e2 | a1\pp\<~ | a~ | a\f\bendAfter #-9 | R1
   d,4-^ r r bf\mf | a1~ | a~ | a | r2 r4 bf4\mf | a1~ | a | d,4-^\f e-^ f-^ fs-^
   R1\fermataMarkup R1\fermataMarkup R1\fermataMarkup R1\fermataMarkup
-  d2\mf\fermata e\fermata | c1~\fermata | c\fermata
-  a''4-^\f r r2 |
+  g2\(\mf\fermata g\fermata | f1\fermata\) \breathe | e1\fermata
+  a'4-^\f r r2 |
   e8. d16~ d8 cs8~ cs2 | r4 f16 f8 f16~ f16 f8 r16 r4 |
   cs8. d16~ d8 e8~ e2 | r4 f16 f8 f16 r2 |
   e8. d16~ d8 cs8~ cs2 | r4 f16 f8 f16~ f16 f8 r16 r4 |
@@ -116,7 +116,7 @@ scoreATromboneI = \relative c {
   cs8. d16~ d8 e8~ e2 | a1\pp\<~ | a~ | a\f\bendAfter #-9 | R1 |
   R1*7 | d,4-^ e-^ f-^ fs-^
   R1\fermataMarkup R1\fermataMarkup R1\fermataMarkup R1\fermataMarkup
-  R1\fermataMarkup R1\fermataMarkup R1\fermataMarkup |
+  d2\(\mf\fermata e\fermata | c\fermata d\)\fermata \breathe | cs1\fermata
   d4-^ r4 r2 |
   e8. d16~ d8 cs8~ cs2 | r4 d16 d8 d16~ d16 d8 r16 r4 |
   cs8. d16~ d8 e8~ e2 | r4 d16 d8 d16 r2 |
